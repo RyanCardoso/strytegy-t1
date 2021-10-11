@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 
 import { Header } from '../components/Header'
 import { Main } from '../components/Main'
+import Footer from '../components/Footer'
 
 export const query = graphql`
 query {
@@ -38,26 +39,28 @@ export default function Index({ data }) {
 
   const dataMain = data.alldata.projects[0]
 
-    return (
-        <div>
-            {console.log("to aqui:", data)}
-            <Header
-                blog={dataMain.btnblog}
-                faq={dataMain.btnfaq}
-                enter={dataMain.btnenter}
-                lang={dataMain.btnlang}
-                image={dataMain.testimg.url}
-            />
-            <Main
-              title={dataMain.title}
-              paragraph={dataMain.subtitle}
-              btnstart={dataMain.btnstart}
-              image={dataMain.imagea.url}
-              bottomtitle={dataMain.divtitle}
-              bottomparagraph={dataMain.divparagraph}
-              imagemain={dataMain.gif.url}
-              imgmain={dataMain.imagemain.url}
-            />
-        </div>
-    )
+  return (
+    <div>
+      {console.log("to aqui:", data)}
+      <Header
+        blog={dataMain.btnblog}
+        faq={dataMain.btnfaq}
+        enter={dataMain.btnenter}
+        lang={dataMain.btnlang}
+        image={dataMain.testimg.url}
+      />
+      <Main
+        title={dataMain.title}
+        paragraph={dataMain.subtitle}
+        btnstart={dataMain.btnstart}
+        image={dataMain.imagea.url}
+        bottomtitle={dataMain.divtitle}
+        bottomparagraph={dataMain.divparagraph}
+        imagemain={dataMain.gif.url}
+        imgmain={dataMain.imagemain.url}
+      />
+
+      <Footer teste="Alooou, teste, testando, testado, testou, funfou!" />
+    </div>
+  )
 }
